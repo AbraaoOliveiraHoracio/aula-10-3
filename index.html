@@ -11,22 +11,42 @@
 <body>
     <h1>Calculadora</h1>
     </form>
-        <input id="num1" type="text"> </input>
-        <input id="num2" type="text"> </input>
-        <button id="A" type="buton" onclick="somar()">Somar</button>
-        <input id="soma" type="text" disabled> </input>
+
+    <div class="bonito">
+        <center>
+            
+        <input class="dd" id="num1" type="text"> </input>
+        <input class="dd" id="num2" type="text"> </input>
+        <input class="dd" id="resposta" type="text" disabled> </input>
+        <br>
+        <br>
+        <br>
+        <button id="A" type="buton" onclick="calculadora('+')">+</button>
+        <button id="A" type="buton" onclick="calculadora('/')">/</button>
+        <button id="A" type="buton" onclick="calculadora('*')">x</button>
+        <button id="A" type="buton" onclick="calculadora('-')">-</button>
+    </center>
+    </div>
        
 
     </form>
     <script>
-        function somar(){
-            var num1,num2, soma;
+        function calculadora(op){
+            var num1,num2, resposta;
             num1 = parseFloat(document.getElementById("num1").value);
             num2 = parseFloat(document.getElementById("num2").value);
-            
-            soma = num1 + num2;
 
-            document.getElementById("soma").value = soma;
+            if(op == '+')
+            resposta = num1 + num2;
+            else if(op == '/')
+            resposta = num1 / num2;
+            else if(op == '*')
+            resposta = num1 * num2;
+            else if(op == '-')
+            resposta = num1 - num2;
+
+
+            document.getElementById("resposta").value = resposta;
         }
     </script>
 </body>
